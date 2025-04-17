@@ -37,6 +37,7 @@ def extract_features_from_wav(filename):
 
   
     data = {
+        'filename':filename,
         **compute_feature_aggregations(centroids, "Centroid"),
         **compute_feature_aggregations(rolloffs, "Rolloff"),
         **compute_feature_aggregations(flux, "Flux"),

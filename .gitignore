@@ -6,6 +6,8 @@
 /tf-env/
 
 # Ignore all .mp4, .png, .jpg, .mp3 files in the repository
+*.pkl
+/instrumentClassification/*.pkl
 *.mp4
 *.png
 *.jpg
@@ -14,6 +16,6 @@
 *.webm
 *.csv
 *.json
-*.pkl
+
 *.arff
-*.rar
+*.rarr

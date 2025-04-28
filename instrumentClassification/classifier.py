@@ -10,7 +10,7 @@ mapped_instruments = {1: 'Piano', 7: 'Harpsichord', 41: 'Violin, fiddle', 43: 'C
 yamnet_model = hub.load('https://tfhub.dev/google/yamnet/1')
 
 # Load the trained model, scaler, and label encoder
-with open('trained_model.pkl', 'rb') as f:
+with open('./instrumentClassification/trained_model.pkl', 'rb') as f:
     trained_model = pickle.load(f)
 
 

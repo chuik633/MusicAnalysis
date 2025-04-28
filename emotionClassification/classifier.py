@@ -1,6 +1,6 @@
 import joblib
 
-from myAudioData import *
+from emotionClassification.myAudioData import *
 
 emotion_features = ['amazed-suprised','happy-pleased','relaxing-calm','quiet-still','sad-lonely','angry-aggresive']
 audio_feature_names = ['Mean_Acc1298_Mean_Mem40_Centroid', 'Mean_Acc1298_Mean_Mem40_Rolloff', 'Mean_Acc1298_Mean_Mem40_Flux', 'Mean_Acc1298_Mean_Mem40_MFCC_0', 'Mean_Acc1298_Mean_Mem40_MFCC_1', 'Mean_Acc1298_Mean_Mem40_MFCC_2', 'Mean_Acc1298_Mean_Mem40_MFCC_3', 'Mean_Acc1298_Mean_Mem40_MFCC_4', 'Mean_Acc1298_Mean_Mem40_MFCC_5', 'Mean_Acc1298_Mean_Mem40_MFCC_6', 'Mean_Acc1298_Mean_Mem40_MFCC_7', 'Mean_Acc1298_Mean_Mem40_MFCC_8', 'Mean_Acc1298_Mean_Mem40_MFCC_9', 'Mean_Acc1298_Mean_Mem40_MFCC_10', 'Mean_Acc1298_Mean_Mem40_MFCC_11', 'Mean_Acc1298_Mean_Mem40_MFCC_12', 'Mean_Acc1298_Std_Mem40_Centroid', 'Mean_Acc1298_Std_Mem40_Rolloff', 'Mean_Acc1298_Std_Mem40_Flux', 'Mean_Acc1298_Std_Mem40_MFCC_0', 'Mean_Acc1298_Std_Mem40_MFCC_1', 'Mean_Acc1298_Std_Mem40_MFCC_2', 'Mean_Acc1298_Std_Mem40_MFCC_3', 'Mean_Acc1298_Std_Mem40_MFCC_4', 'Mean_Acc1298_Std_Mem40_MFCC_5', 'Mean_Acc1298_Std_Mem40_MFCC_6', 'Mean_Acc1298_Std_Mem40_MFCC_7', 'Mean_Acc1298_Std_Mem40_MFCC_8', 'Mean_Acc1298_Std_Mem40_MFCC_9', 'Mean_Acc1298_Std_Mem40_MFCC_10', 'Mean_Acc1298_Std_Mem40_MFCC_11', 'Mean_Acc1298_Std_Mem40_MFCC_12', 'Std_Acc1298_Mean_Mem40_Centroid', 'Std_Acc1298_Mean_Mem40_Rolloff', 'Std_Acc1298_Mean_Mem40_Flux', 'Std_Acc1298_Mean_Mem40_MFCC_0', 'Std_Acc1298_Mean_Mem40_MFCC_1', 'Std_Acc1298_Mean_Mem40_MFCC_2', 'Std_Acc1298_Mean_Mem40_MFCC_3', 'Std_Acc1298_Mean_Mem40_MFCC_4', 'Std_Acc1298_Mean_Mem40_MFCC_5', 'Std_Acc1298_Mean_Mem40_MFCC_6', 'Std_Acc1298_Mean_Mem40_MFCC_7', 'Std_Acc1298_Mean_Mem40_MFCC_8', 'Std_Acc1298_Mean_Mem40_MFCC_9', 'Std_Acc1298_Mean_Mem40_MFCC_10', 'Std_Acc1298_Mean_Mem40_MFCC_11', 'Std_Acc1298_Mean_Mem40_MFCC_12', 'Std_Acc1298_Std_Mem40_Centroid', 'Std_Acc1298_Std_Mem40_Rolloff', 'Std_Acc1298_Std_Mem40_Flux', 'Std_Acc1298_Std_Mem40_MFCC_0', 'Std_Acc1298_Std_Mem40_MFCC_1', 'Std_Acc1298_Std_Mem40_MFCC_2', 'Std_Acc1298_Std_Mem40_MFCC_3', 'Std_Acc1298_Std_Mem40_MFCC_4', 'Std_Acc1298_Std_Mem40_MFCC_5', 'Std_Acc1298_Std_Mem40_MFCC_6', 'Std_Acc1298_Std_Mem40_MFCC_7', 'Std_Acc1298_Std_Mem40_MFCC_8', 'Std_Acc1298_Std_Mem40_MFCC_9', 'Std_Acc1298_Std_Mem40_MFCC_10', 'Std_Acc1298_Std_Mem40_MFCC_11', 'Std_Acc1298_Std_Mem40_MFCC_12']
@@ -13,8 +13,8 @@ def classify_emotion(audio_path):
     audio_features = pd.DataFrame([audio_features])
     
     #load model and scaler
-    model = joblib.load('./data/emotion/emotion_model.pkl')
-    scaler = joblib.load('./data/emotion/emotion_scaler.pkl')
+    model = joblib.load('./emotionClassification/data/emotion/emotion_model.pkl')
+    scaler = joblib.load('./emotionClassification/data/emotion/emotion_scaler.pkl')
   
 
     # #scale 

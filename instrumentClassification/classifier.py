@@ -24,8 +24,8 @@ def classify_instrument(audio_path):
 
     # Predict using  trained model
     y_pred = trained_model.predict([features])[0].tolist()
-    print('pyred', y_pred)
-    print(y_pred.__class__)
+    # print('pyred', y_pred)
+    # print(y_pred.__class__)
 
     # Map predictions to instrument names
     instruments = [list(mapped_instruments.values())[i] for i, val in enumerate(y_pred) if val == 1]

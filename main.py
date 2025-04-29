@@ -13,7 +13,7 @@ from emotionClassification.classifier import classify_emotion
 
 datadir = './data/movies/'
 #get all the folders names in this directory
-film_folders = [f for f in listdir(datadir) if not f.startswith('.')]
+film_folders = [f for f in listdir(datadir) if not f.startswith('.') and "." not in f]
 
 def processMovie(movie_folder):
     # get all the files in the folder

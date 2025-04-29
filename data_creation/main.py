@@ -54,8 +54,8 @@ def getData(name, numSamples = 20, youtubeLink = False, captions = False):
             return False
 
     #2. splits the video in n_samples videos, and corresponding audio files and images
-    
-    command = ['node', './data_creation/processVideo.js',dataDir, str(numSamples)]
+    absoluteDataDir = os.path.abspath(dataDir)+"/"
+    command = ['node', './data_creation/processVideo.js',absoluteDataDir, str(numSamples)]
     print(command)
     try:
         result = subprocess.run(command, capture_output=False, text=True, check=True)
@@ -81,3 +81,4 @@ for emotion in emotionSceneLinks.keys():
     for movieName in failed:
         print("removing entry",movieName)
         emotionSceneLinks[emotion].pop(movieName)
+

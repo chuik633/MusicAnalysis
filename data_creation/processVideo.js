@@ -45,7 +45,7 @@ function makeFolders(videoFilePath) {
 async function getVideoLength(videoFilePath) {
   try {
     const { stdout } = await execPromise(
-      `ffprobe -v quiet -print_format json -show_format ${videoFilePath}`
+      `ffprobe -v quiet -print_format json -show_format "${videoFilePath}"`
     );
 
     const videoInfo = JSON.parse(stdout);
@@ -58,7 +58,7 @@ async function getVideoLength(videoFilePath) {
 }
 
 //VIDEO PROCESS:
-async function processVideo( mainDir, numSamples) {
+async function processVideo(mainDir, numSamples) {
   //1. MAKE THE FOLDERS + GET THE PATHS
   const { images, audios, videos } = makeFolders(mainDir);
   const videoFilePath = mainDir + "video.mp4";
@@ -106,11 +106,17 @@ async function processVideo( mainDir, numSamples) {
       await executeCommand(
         `ffmpeg -i "${videoSegmentPath}" -q:a 0 -map a "${audioSegmentPath}"`
       );
-      
+
       //extract the image
-      await executeCommand(
-        `ffmpeg -i "${videoSegmentPath}" -ss 00:00:00 -vframes 1 ${imgSegmentPath}`
+      console.log("image path:", imgSegmentPath);
+      const imgSegmentPathExcaped = imgSegmentPath.replace(
+        /(["\s'$`\\])/g,
+        "\\$1"
       );
+      await executeCommand(
+        `ffmpeg -i "${videoSegmentPath}" -ss 00:00:10 -vframes 1 ${imgSegmentPathExcaped}`
+      );
+      console.log("image secment path:", imgSegmentPath);
     }
   } catch (error) {
     console.error("!ERROR PROCESSING VIDEO:", error);

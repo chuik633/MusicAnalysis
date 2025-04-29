@@ -13,8 +13,8 @@ def classify_emotion(audio_path):
     audio_features = pd.DataFrame([audio_features])
     
     #load model and scaler
-    model = joblib.load('./emotionClassification/data/emotion/emotion_model.pkl')
-    scaler = joblib.load('./emotionClassification/data/emotion/emotion_scaler.pkl')
+    model = joblib.load('./emotionClassification/data/emotion/emotion_model2.pkl')
+    scaler = joblib.load('./emotionClassification/data/emotion/emotion_scaler2.pkl')
   
 
     # #scale 

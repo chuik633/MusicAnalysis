@@ -1,5 +1,5 @@
 emotionSceneLinks= {
-  "amazed-surprised": {
+  "amazed-suprised": {
     "The Matrix": {"url": "https://www.youtube.com/watch?v=vKQi3bBA1y8"},
     "Inception": {"url": "https://www.youtube.com/watch?v=P2tfZksgEy4"},
     "Jurassic Park": {"url": "https://www.youtube.com/watch?v=lc0UehYemQA"},
@@ -43,7 +43,7 @@ emotionSceneLinks= {
     "The Pianist": {"url": "https://www.youtube.com/watch?v=jHfQCfUTlXE"},
 
   },
-  "angry-aggressive": {
+  "angry-aggresive": {
     "The Dark Knight": {"url": "https://www.youtube.com/watch?v=9IihDTe4vxw"},
     "Gladiator": {"url": "https://www.youtube.com/watch?v=5vBp7i5wR8Y"},
     "American History X": {"url": "https://www.youtube.com/watch?v=mn63eVqZZto"},

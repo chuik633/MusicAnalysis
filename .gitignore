@@ -19,3 +19,5 @@
 
 *.arff
 *.rarr
+
+*.pyc
